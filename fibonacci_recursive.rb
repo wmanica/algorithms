@@ -1,17 +1,19 @@
+# frozen string literal
+
 # Recursive
 # We want to know what number will be in the fibonacci sequence position excluding the 0
 
 # These will have a problem of exponentially O(2^n)
 
-def fibonacci(n)
-    return n if (0..1).include? n
-    (fibonacci(n-1) + fibonacci(n-2))
+def fibonacci(num)
+  return num if (0..1).include? num
+
+  (fibonacci(num - 1) + fibonacci(num - 2))
 end
 
-f = ->(x) { x < 2 ? x : f[x-1] + f[x-2] }
+f = ->(x) { x < 2 ? x : f[x - 1] + f[x - 2] }
 # p fibonacci(10)
 # p f[11]
-
 
 # Solution will be to use Memoization
 
