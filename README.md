@@ -1,6 +1,6 @@
 # algorithms
 
-This README is about different algorithms
+This repo is about different algorithms and Ruby experiments
 
 ## About
 

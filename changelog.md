@@ -4,6 +4,7 @@
 
 ### Added
 
+* Race Condition testing scenarios
 * Factorial solutions for iterative and recursive
 * Fibonacci solution iterative
 * Fibonacci solution recursive
