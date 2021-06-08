@@ -6,21 +6,21 @@
 @counter = 0
 
 def read_counter
- @counter
+    @counter
 end
 
 def increment(value)
- @counter = value
+    @counter = value
 end
 
 100.times.map do
- Thread.new do
-  10000.times do
-    value = read_counter
-    value = value + 1
-    increment(value)
-  end
- end
+    Thread.new do
+        10000.times do
+            value = read_counter
+            value = value + 1
+            increment(value)
+        end
+    end
 end.each(&:join)
 
 puts @counter
@@ -30,13 +30,13 @@ puts @counter
 @counter = 0
 
 100.times.map do
-  Thread.new do
-    10000.times do
-      value = @counter
-      value = value + 1
-      @counter = value
+    Thread.new do
+        10000.times do
+            value = @counter
+            value = value + 1
+            @counter = value
+        end
     end
-  end
 end.each(&:join)
- 
+
 puts @counter
