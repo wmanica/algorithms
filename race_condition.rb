@@ -1,7 +1,8 @@
 # Based on https://jonathan-wong.medium.com/what-is-global-interpreter-lock-in-relation-to-ruby-18d0f4f20e20 credits all to him.
 # Just typo corrections on each of the implementations 
 
-# DUE Global Locker Implementation RESULT IS RANDOM
+# DUE Global Locker Implementation 
+# Run several times, you’d get several different outputs. This is an example of race condition. Because of this, this makes the code unreliable.
 @counter = 0
 
 def read_counter
@@ -25,7 +26,7 @@ end.each(&:join)
 puts @counter
 
 
-# RUNS AS EXPECTED
+# Run several times, you’d get every time 1_000_000
 @counter = 0
 
 100.times.map do
